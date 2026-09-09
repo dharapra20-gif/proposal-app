@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Special Surprise For You 💖 | Will You Be Mine Forever?</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800&family=Dancing+Script:wght@600;700&family=Great+Vibes&family=Sacramento&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💖</text></svg>">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Background Canvas for Floating Hearts & Particles -->
+    <canvas id="bgCanvas"></canvas>
+    <div class="glow-bg-overlay"></div>
+
+    <!-- Floating Music & Sound Controls -->
+    <header class="top-nav">
+        <div class="logo-text">
+            <span>✨</span> OUR LOVE STORY
+        </div>
+        <button id="musicToggleBtn" class="nav-btn" aria-label="Toggle Background Music">
+            <span class="music-icon">🎵</span> <span id="musicStatusText">Play "Saajna" by Darshan Raval</span>
+        </button>
+    </header>
+
+    <main class="container">
+
+        <!-- SECTION 1: HERO ENTRANCE -->
+        <section class="hero-section">
+            <div class="badge-pill">
+                <span class="pulse-heart">❤️</span> A Message From My Heart
+            </div>
+            <h1 class="main-title">
+                You Asked Me First... <br>
+                <span class="gradient-text">Now It's My Turn!</span>
+            </h1>
+            <p class="hero-subtitle">
+                You surprised me when you proposed your love to me. Today, I wanted to propose back to you in my own special way through code!
+            </p>
+            <div class="hero-actions">
+                <a href="#video-section" class="btn btn-primary">
+                    <span>Watch Our Memories</span> ✨
+                </a>
+                <a href="#proposal-section" class="btn btn-secondary">
+                    <span>Skip to The Question</span> 💖
+                </a>
+            </div>
+        </section>
+
+        <!-- SECTION 2: DEMO VIDEO & MEMORIES -->
+        <section id="video-section" class="section-card glass-card">
+            <div class="card-header">
+                <span class="section-tag">CHAPTER 1</span>
+                <h2>Our Favorite Memories 🎥</h2>
+                <p>Moments we've shared together that mean the absolute world to me.</p>
+            </div>
+
+            <!-- Video Player Container -->
+            <div class="video-container">
+                <video id="proposalVideo" controls poster="photos/WhatsApp Image 2026-09-02 at 10.14.43.jpeg" preload="metadata">
+                    <!-- User's uploaded videos -->
+                    <source src="photos/WhatsApp Video 2026-09-02 at 10.16.10.mp4" type="video/mp4">
+                    <source src="photos/WhatsApp Video 2026-09-02 at 10.16.06.mp4" type="video/mp4">
+                    Your browser does not support HTML5 video.
+                </video>
+                <div id="videoPlaceholder" class="video-placeholder">
+                    <div class="placeholder-icon">🎬</div>
+                    <h3>Our Special Videos</h3>
+                    <p>Playing your romantic moments!</p>
+                </div>
+            </div>
+
+            <!-- Video Selector Switcher -->
+            <div class="video-switcher">
+                <span class="switcher-label">Choose Video:</span>
+                <button class="video-pill active" data-src="photos/WhatsApp Video 2026-09-02 at 10.16.10.mp4">✨ Memory Clip 1</button>
+                <button class="video-pill" data-src="photos/WhatsApp Video 2026-09-02 at 10.16.06.mp4">💖 Memory Clip 2</button>
+            </div>
+
+            <!-- Photo Memories Grid -->
+            <div class="memories-grid-header">
+                <div class="memories-title-wrapper">
+                    <h3>Captured Moments 📸</h3>
+                    <span class="photo-count-badge">23 Precious Memories</span>
+                </div>
+                <p class="memories-subtitle">Click any photo to view in full romantic lightbox! ✨</p>
+            </div>
+
+            <div class="memories-grid" id="memoriesGallery">
+                <div class="memory-card" data-index="0" data-caption="Where It All Began 💖">
+                    <div class="photo-box">
+                        <img src="photos/WhatsApp Image 2026-09-02 at 10.14.43.jpeg" alt="Where It All Began" loading="lazy">
+                        <div class="photo-overlay"><span>Enlarge 🔍</span></div>
+                    </div>
+                    <div class="memory-caption">Where It All Began 💖</div>
+                </div>
+
+                <div class="memory-card" data-index="1" data-caption="Your Sweetest Smile ✨">
+                    <div class="photo-box">
+                        <img src="photos/WhatsApp Image 2026-09-02 at 10.14.44.jpeg" alt="Your Sweetest Smile" loading="lazy">
+                        <div class="photo-overlay"><span>Enlarge 🔍</span></div>
+                    </div>
+                    <div class="memory-caption">Your Sweetest Smile ✨</div>
+                </div>
+
+                <div class="memory-card" data-index="2" data-caption="Every Second With You 💕">
+                    <div class="photo-box">
+                        <img src="photos/WhatsApp Image 2026-09-02 at 10.14.45.jpeg" alt="Every Second With You" loading="lazy">
+                        <div class="photo-overlay"><span>Enlarge 🔍</span></div>
+                    </div>
+                    <div class="memory-caption">Every Second With You 💕</div>
+                </div>
+
+                <div class="memory-card" data-index="3" data-caption="Our Favorite Journey 🌸">
+                    <div class="photo-box">
+                        <img src="photos/WhatsApp Image 2026-09-02 at 10.14.46.jpeg" alt="Our Favorite Journey" loading="lazy">
+                        <div class="photo-overlay"><span>Enlarge 🔍</span></div>
+                    </div>
+                    <div class="memory-caption">Our Favorite Journey 🌸</div>
+                </div>
+
+                <div class="memory-card" data-index="4" data-caption="Pure Happiness 🥰">
+                    <div class="photo-box">
+                        <img src="photos/WhatsApp Image 2026-09-02 at 10.14.47.jpeg" alt="Pure Happiness" loading="lazy">
+                        <div class="photo-overlay"><span>Enlarge 🔍</span></div>
+                    </div>
+                    <div class="memory-caption">Pure Happiness 🥰</div>
+                </div>
+
+                <div class="memory-card" data-index="5" data-caption="Laughter & Endless Joy 💫">
+                    <div class="photo-box">
+                        <img src="photos/WhatsApp Image 2026-09-02 at 10.14.49.jpeg" alt="Laughter & Endless Joy" loading="lazy">
+                        <div class="photo-overlay"><span>Enlarge 🔍</span></div>
+                    </div>
+                    <div class="memory-caption">Laughter & Endless Joy 💫</div>
+                </div>
+
+                <div class="memory-card" data-index="6" data-caption="My Whole World 🌎">
+                    <div class="photo-box">
+                        <img src="photos/WhatsApp Image 2026-09-02 at 10.14.54.jpeg" alt="My Whole World" loading="lazy">
+                        <div class="photo-overlay"><span>Enlarge 🔍</span></div>
+                    </div>
+                    <div class="memory-caption">My Whole World 🌎</div>
+                </div>
+
+                <div class="memory-card" data-index="7" data-caption="Making Magical Memories 🥂">
+                    <div class="photo-box">
+                        <img src="photos/WhatsApp Image 2026-09-02 at 10.14.58.jpeg" alt="Making Magical Memories" loading="lazy">
+                        <div class="photo-overlay"><span>Enlarge 🔍</span></div>
+                    </div>
+                    <div class="memory-caption">Making Magical Memories 🥂</div>
+                </div>
+
+                <div class="memory-card" data-index="8" data-caption="Unconditional Love 💖">
+                    <div class="photo-box">
+                        <img src="photos/WhatsApp Image 2026-09-02 at 10.15.10.jpeg" alt="Unconditional Love" loading="lazy">
+                        <div class="photo-overlay"><span>Enlarge 🔍</span></div>
+                    </div>
+                    <div class="memory-caption">Unconditional Love 💖</div>
+                </div>
+
+                <div class="memory-card" data-index="9" data-caption="Hand in Hand Forever 🤝">
+                    <div class="photo-box">
+                        <img src="photos/WhatsApp Image 2026-09-02 at 10.16.03.jpeg" alt="Hand in Hand Forever" loading="lazy">
+                        <div class="photo-overlay"><span>Enlarge 🔍</span></div>
+                    </div>
+                    <div class="memory-caption">Hand in Hand Forever 🤝</div>
+                </div>
+
+                <div class="memory-card" data-index="10" data-caption="Endless Late Night Talks 🌙">
+                    <div class="photo-box">
+                        <img src="photos/WhatsApp Image 2026-09-02 at 10.16.04.jpeg" alt="Endless Late Night Talks" loading="lazy">
+                        <div class="photo-overlay"><span>Enlarge 🔍</span></div>
+                    </div>
+                    <div class="memory-caption">Endless Late Night Talks 🌙</div>
+                </div>
+
+                <div class="memory-card" data-index="11" data-caption="Better Together Always 💑">
+                    <div class="photo-box">
+                        <img src="photos/WhatsApp Image 2026-09-02 at 10.16.05.jpeg" alt="Better Together Always" loading="lazy">
+                        <div class="photo-overlay"><span>Enlarge 🔍</span></div>
+                    </div>
+                    <div class="memory-caption">Better Together Always 💑</div>
+                </div>
+
+                <div class="memory-card" data-index="12" data-caption="My Safe Place In Your Arms 🏡">
+                    <div class="photo-box">
+                        <img src="photos/WhatsApp Image 2026-09-02 at 10.16.08.jpeg" alt="My Safe Place In Your Arms" loading="lazy">
+                        <div class="photo-overlay"><span>Enlarge 🔍</span></div>
+                    </div>
+                    <div class="memory-caption">My Safe Place In Your Arms 🏡</div>
+                </div>
+
+                <div class="memory-card" data-index="13" data-caption="The Sweetest Memories 🍬">
+                    <div class="photo-box">
+                        <img src="photos/WhatsApp Image 2026-09-02 at 10.16.11.jpeg" alt="The Sweetest Memories" loading="lazy">
+                        <div class="photo-overlay"><span>Enlarge 🔍</span></div>
+                    </div>
+                    <div class="memory-caption">The Sweetest Memories 🍬</div>
+                </div>
+
+                <div class="memory-card" data-index="14" data-caption="Forever In Love With You 💘">
+                    <div class="photo-box">
+                        <img src="photos/WhatsApp Image 2026-09-02 at 10.16.12.jpeg" alt="Forever In Love With You" loading="lazy">
+                        <div class="photo-overlay"><span>Enlarge 🔍</span></div>
+                    </div>
+                    <div class="memory-caption">Forever In Love With You 💘</div>
+                </div>
+
+                <div class="memory-card" data-index="15" data-caption="Cherished Sunny Days 🌻">
+                    <div class="photo-box">
+                        <img src="photos/WhatsApp Image 2026-09-02 at 10.16.21.jpeg" alt="Cherished Sunny Days" loading="lazy">
+                        <div class="photo-overlay"><span>Enlarge 🔍</span></div>
+                    </div>
+                    <div class="memory-caption">Cherished Sunny Days 🌻</div>
+                </div>
+
+                <div class="memory-card" data-index="16" data-caption="Heart to Heart Connection 💞">
+                    <div class="photo-box">
+                        <img src="photos/WhatsApp Image 2026-09-02 at 10.16.22.jpeg" alt="Heart to Heart Connection" loading="lazy">
+                        <div class="photo-overlay"><span>Enlarge 🔍</span></div>
+                    </div>
+                    <div class="memory-caption">Heart to Heart Connection 💞</div>
+                </div>
+
+                <div class="memory-card" data-index="17" data-caption="My Best Friend & True Love 💍">
+                    <div class="photo-box">
+                        <img src="photos/WhatsApp Image 2026-09-02 at 10.16.23.jpeg" alt="My Best Friend & True Love" loading="lazy">
+                        <div class="photo-overlay"><span>Enlarge 🔍</span></div>
+                    </div>
+                    <div class="memory-caption">My Best Friend & True Love 💍</div>
+                </div>
+
+                <div class="memory-card" data-index="18" data-caption="A Million Reasons to Smile 😊">
+                    <div class="photo-box">
+                        <img src="photos/WhatsApp Image 2026-09-02 at 10.16.25.jpeg" alt="A Million Reasons to Smile" loading="lazy">
+                        <div class="photo-overlay"><span>Enlarge 🔍</span></div>
+                    </div>
+                    <div class="memory-caption">A Million Reasons to Smile 😊</div>
+                </div>
+
+                <div class="memory-card" data-index="19" data-caption="Always By Your Side 🌟">
+                    <div class="photo-box">
+                        <img src="photos/WhatsApp Image 2026-09-02 at 10.16.26.jpeg" alt="Always By Your Side" loading="lazy">
+                        <div class="photo-overlay"><span>Enlarge 🔍</span></div>
+                    </div>
+                    <div class="memory-caption">Always By Your Side 🌟</div>
+                </div>
+
+                <div class="memory-card" data-index="20" data-caption="Infinite Love & Beyond ♾️">
+                    <div class="photo-box">
+                        <img src="photos/WhatsApp Image 2026-09-02 at 10.16.28.jpeg" alt="Infinite Love & Beyond" loading="lazy">
+                        <div class="photo-overlay"><span>Enlarge 🔍</span></div>
+                    </div>
+                    <div class="memory-caption">Infinite Love & Beyond ♾️</div>
+                </div>
+
+                <div class="memory-card" data-index="21" data-caption="My Forever and Ever 💖">
+                    <div class="photo-box">
+                        <img src="photos/WhatsApp Image 2026-09-02 at 10.16.29.jpeg" alt="My Forever and Ever" loading="lazy">
+                        <div class="photo-overlay"><span>Enlarge 🔍</span></div>
+                    </div>
+                    <div class="memory-caption">My Forever and Ever 💖</div>
+                </div>
+
+                <div class="memory-card" data-index="22" data-caption="Two Hearts One Soul 🥂">
+                    <div class="photo-box">
+                        <img src="photos/WhatsApp Image 2026-09-02 at 10.16.30.jpeg" alt="Two Hearts One Soul" loading="lazy">
+                        <div class="photo-overlay"><span>Enlarge 🔍</span></div>
+                    </div>
+                    <div class="memory-caption">Two Hearts One Soul 🥂</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: REASONS WHY I LOVE YOU -->
+        <section class="section-card glass-card">
+            <div class="card-header">
+                <span class="section-tag">CHAPTER 2</span>
+                <h2>Why I Choose You Every Single Day 💌</h2>
+                <p>Tap each secret card to reveal a message from my heart.</p>
+            </div>
+            <div class="reasons-grid">
+                <div class="reason-card" tabindex="0">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <span class="card-number">01</span>
+                            <h3>Your Warmth & Kindness 🌟</h3>
+                            <span class="tap-hint">Tap to flip 💫</span>
+                        </div>
+                        <div class="card-back">
+                            <p>"The way you care for me and make me feel safe every single day makes my heart melt."</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="reason-card" tabindex="0">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <span class="card-number">02</span>
+                            <h3>Your Smile & Laughter 😊</h3>
+                            <span class="tap-hint">Tap to flip 💫</span>
+                        </div>
+                        <div class="card-back">
+                            <p>"Seeing you smile instantly brightens even my darkest days. Your happiness is contagious!"</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="reason-card" tabindex="0">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <span class="card-number">03</span>
+                            <h3>The Way You Proposed 💍</h3>
+                            <span class="tap-hint">Tap to flip 💫</span>
+                        </div>
+                        <div class="card-back">
+                            <p>"You gave me one of the sweetest moments of my life when you asked for my love. Now I'm taking my turn!"</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: THE GRAND PROPOSAL QUESTION -->
+        <section id="proposal-section" class="proposal-card-wrapper">
+            <div class="proposal-card glass-card glow-border">
+                <div class="heart-pulse-icon">💖</div>
+                <span class="proposal-tag">THE BIG QUESTION</span>
+                
+                <h2 class="question-title">
+                    Will You Be My <br>
+                    & <span class="gradient-text font-script">Mine Forever??</span>
+                </h2>
+
+                <p class="question-subtitle">
+                    I loved you yesterday, I love you today, and I will love you for all eternity.
+                </p>
+
+                <!-- Interactive Buttons -->
+                <div class="proposal-actions" id="buttonArea">
+                    <button id="yesBtn" class="btn btn-yes">
+                        <span>YES, ABSOLUTELY! 💖</span>
+                    </button>
+                    <button id="noBtn" class="btn btn-no">
+                        <span>No 😜</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ROMANTIC PHOTO GALLERY LIGHTBOX MODAL -->
+    <div id="photoLightbox" class="lightbox-overlay" aria-hidden="true">
+        <button id="closeLightboxBtn" class="lightbox-close" aria-label="Close Lightbox">&times;</button>
+        <button id="prevLightboxBtn" class="lightbox-nav-btn prev-btn" aria-label="Previous Photo">&#10094;</button>
+        
+        <div class="lightbox-content">
+            <div class="lightbox-img-wrapper">
+                <img id="lightboxImg" src="" alt="Enlarged Memory">
+                <div class="lightbox-glow-frame"></div>
+            </div>
+            <div class="lightbox-details">
+                <span id="lightboxCaption" class="lightbox-caption"></span>
+                <span id="lightboxCounter" class="lightbox-counter"></span>
+            </div>
+        </div>
+
+        <button id="nextLightboxBtn" class="lightbox-nav-btn next-btn" aria-label="Next Photo">&#10095;</button>
+    </div>
+
+    <!-- CELEBRATION MODAL (Triggers when YES is clicked) -->
+    <div id="celebrationModal" class="modal-overlay">
+        <div class="modal-content glass-card glow-gold">
+            <button id="closeModalBtn" class="close-btn">&times;</button>
+            <div class="modal-badge">🎉 OFFICIAL LOVE CERTIFICATE 🎉</div>
+            <h2 class="modal-title font-script">We Are Official Forever! 💍</h2>
+            <p class="modal-text">
+                Thank you for being my person, my best friend, my love, and my forever Mine! 💖
+            </p>
+
+            <!-- REAL CODED LOVE.CSS & DIGITAL FLOWER ANIMATION -->
+            <div class="digital-bloom-section" id="digitalBloomSection">
+                <div class="digital-bloom-card glow-video-border">
+                    <div class="video-ribbon-tag">
+                        <span>✨ Love.css · Digital Flower ✨</span>
+                    </div>
+
+                    <div class="digital-bloom-stage">
+                        <!-- Floating Ambient Sparkles & Mini Hearts -->
+                        <span class="bloom-sparkle sp-1">✦</span>
+                        <span class="bloom-sparkle sp-2">✦</span>
+                        <span class="bloom-sparkle sp-3">✨</span>
+                        <span class="bloom-heart bh-1">💖</span>
+                        <span class="bloom-heart bh-2">💕</span>
+
+                        <!-- STATE 1: LOVE.CSS COMPILER / LOADING CARD -->
+                        <div class="love-compiler-box" id="compilerBox">
+                            <div class="compiler-heart-icon">💖</div>
+                            <h4 class="compiler-filename">Love.css</h4>
+                            <div class="compiler-progress-bar">
+                                <div class="compiler-progress-fill" id="compilerFill"></div>
+                            </div>
+                            <span class="compiler-status-text" id="compilerStatus">Growing digital petals...</span>
+                            <button id="bloomTriggerBtn" class="btn-tap-bloom" type="button">
+                                <span>TAP TO BLOOM</span> 🌸
+                            </button>
+                        </div>
+
+                        <!-- STATE 2: THE BLOOMING FLOWER CANVAS & REAL CODED DISPLAY -->
+                        <div class="flower-bloom-stage" id="flowerBloomStage">
+                            <div class="love-declaration-text">
+                                <span>I</span> <span>L</span> <span>O</span> <span>V</span> <span>E</span> &nbsp; <span>Y</span> <span>O</span> <span>U</span>
+                            </div>
+
+                            <div class="svg-flower-container">
+                                <svg class="blooming-svg" viewBox="0 0 200 240" xmlns="http://www.w3.org/2000/svg">
+                                    <defs>
+                                        <filter id="bloomGlow" x="-50%" y="-50%" width="200%" height="200%">
+                                            <feGaussianBlur stdDeviation="5" result="blur1" />
+                                            <feGaussianBlur stdDeviation="12" result="blur2" />
+                                            <feMerge>
+                                                <feMergeNode in="blur2" />
+                                                <feMergeNode in="blur1" />
+                                                <feMergeNode in="SourceGraphic" />
+                                            </feMerge>
+                                        </filter>
+                                        <radialGradient id="petalGradient1" cx="50%" cy="50%" r="50%">
+                                            <stop offset="0%" stop-color="#ff85a2" />
+                                            <stop offset="65%" stop-color="#ff2a85" />
+                                            <stop offset="100%" stop-color="#990033" />
+                                        </radialGradient>
+                                        <radialGradient id="petalGradient2" cx="50%" cy="50%" r="50%">
+                                            <stop offset="0%" stop-color="#ffccd5" />
+                                            <stop offset="60%" stop-color="#ff4d88" />
+                                            <stop offset="100%" stop-color="#e6005c" />
+                                        </radialGradient>
+                                        <radialGradient id="centerCoreGlow" cx="50%" cy="50%" r="50%">
+                                            <stop offset="0%" stop-color="#ffffff" />
+                                            <stop offset="30%" stop-color="#ffe066" />
+                                            <stop offset="75%" stop-color="#ff2a85" />
+                                            <stop offset="100%" stop-color="transparent" />
+                                        </radialGradient>
+                                        <linearGradient id="stemGrad" x1="0" y1="1" x2="0" y2="0">
+                                            <stop offset="0%" stop-color="#14532d" />
+                                            <stop offset="50%" stop-color="#22c55e" />
+                                            <stop offset="100%" stop-color="#4ade80" />
+                                        </linearGradient>
+                                    </defs>
+
+                                    <!-- Stem with animated stroke -->
+                                    <path class="flower-stem" id="flowerStem" d="M 100 220 Q 98 165 100 115" stroke="url(#stemGrad)" stroke-width="4.5" stroke-linecap="round" fill="none" />
+
+                                    <!-- Leaves with smooth unfurl -->
+                                    <g class="flower-leaves" id="flowerLeaves">
+                                        <!-- Left Leaf -->
+                                        <path class="flower-leaf leaf-left" d="M 99 175 C 72 165 65 145 70 142 C 82 145 95 158 99 170" fill="#22c55e" opacity="0.9" />
+                                        <!-- Right Leaf -->
+                                        <path class="flower-leaf leaf-right" d="M 101 160 C 128 150 135 130 130 127 C 118 130 105 143 101 155" fill="#16a34a" opacity="0.9" />
+                                    </g>
+
+                                    <!-- Flower Head with layered glowing petals -->
+                                    <g class="flower-head" id="flowerHead" filter="url(#bloomGlow)">
+                                        <!-- Outer Petals Layer -->
+                                        <g class="petals-layer outer-petals">
+                                            <path class="petal p-bot" d="M 100 115 C 75 145 45 125 65 98 C 80 108 98 115 100 115 Z" fill="url(#petalGradient1)" />
+                                            <path class="petal p-bot-r" d="M 100 115 C 125 145 155 125 135 98 C 120 108 102 115 100 115 Z" fill="url(#petalGradient1)" />
+                                            <path class="petal p-left" d="M 100 110 C 58 105 60 70 85 78 C 92 92 98 110 100 110 Z" fill="url(#petalGradient1)" />
+                                            <path class="petal p-right" d="M 100 110 C 142 105 140 70 115 78 C 108 92 102 110 100 110 Z" fill="url(#petalGradient1)" />
+                                        </g>
+
+                                        <!-- Middle Petals Layer -->
+                                        <g class="petals-layer mid-petals">
+                                            <path class="petal p-mid-l" d="M 100 110 C 72 95 78 58 100 68 C 96 88 100 110 100 110 Z" fill="url(#petalGradient2)" />
+                                            <path class="petal p-mid-r" d="M 100 110 C 128 95 122 58 100 68 C 104 88 100 110 100 110 Z" fill="url(#petalGradient2)" />
+                                            <path class="petal p-top" d="M 100 110 C 85 75 82 48 100 42 C 118 48 115 75 100 110 Z" fill="url(#petalGradient2)" />
+                                        </g>
+
+                                        <!-- Glowing Floral Core -->
+                                        <circle class="flower-core" cx="100" cy="88" r="10" fill="url(#centerCoreGlow)" />
+                                        <circle class="flower-core-sparkle" cx="100" cy="88" r="4" fill="#ffffff" />
+                                    </g>
+                                </svg>
+                            </div>
+
+                            <div class="coded-caption">
+                                <span class="typewriter-text">i coded this for you</span> <span class="caption-tulip">🌷</span>
+                            </div>
+
+                            <button id="reBloomBtn" class="btn-rebloom" type="button" title="Bloom Again">
+                                <span>Replay Bloom 🌸</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="certificate-box">
+                <div class="cert-border">
+                    <h3>Certificate of Eternal Love</h3>
+                    <p class="cert-body">
+                        This certifies that on this special day, two hearts chose each other to stay together forever and ever!
+                    </p>
+                    <div class="cert-signatures">
+                        <div class="sig-box">
+                            <span class="sig-text font-signature">Dhara</span>
+                            <span class="sig-line"></span>
+                            <span class="sig-label">With All My Heart</span>
+                        </div>
+                        <div class="sig-heart">💖</div>
+                        <div class="sig-box">
+                            <span class="sig-text font-signature">My Forever Love</span>
+                            <span class="sig-line"></span>
+                            <span class="sig-label">Forever & Always</span>
+                        </div>
+                    </div>
+                    <div class="cert-date" id="certDateText"></div>
+                </div>
+            </div>
+
+            <button id="replayEffectsBtn" class="btn btn-primary" style="margin-top: 20px;">
+                <span>More Fireworks! 🎆</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Audio Element -->
+    <audio id="bgAudio" loop preload="auto">
+        <source src="music/background-music.mp3" type="audio/mp3">
+        <source src="music/sajna.mp3" type="audio/mp3">
+        <source src="music/sajna_darshan_raval.mp3" type="audio/mp3">
+        <source src="music/sajna.wav" type="audio/wav">
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
